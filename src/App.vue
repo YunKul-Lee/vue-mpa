@@ -1,5 +1,5 @@
 <script setup>
-import {defineAsyncComponent, shallowRef, watchEffect} from "vue"
+import { defineAsyncComponent, shallowRef, watchEffect } from 'vue'
 import Error404 from './Error404.vue'
 
 const pages = import.meta.glob('./pages/**/*.vue')
@@ -21,10 +21,8 @@ watchEffect(() => {
   // if (url.endsWith('/')) url = url.slice(0, -1)
   page.value = pageComponents[url.slice(1).toLowerCase()] || Error404
 })
-
 </script>
 
 <template>
   <component :is="page"></component>
 </template>
-`
